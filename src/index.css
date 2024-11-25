@@ -6,6 +6,7 @@
   --primary-color-grey: #2a2e37;
   --primary-color-yellow: #D6E583;
   --secondary-color-soft-grey: #f1f1f1;
+  --error-red: #ff0000;
 }
 
 html,
@@ -39,6 +40,21 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+ /********** error message ***********/
+.error-message {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.error-message h1 {
+  font-size: 1.5rem;
+  color: var(--error-red);
 }
   
  /********** mobile first ***********/
