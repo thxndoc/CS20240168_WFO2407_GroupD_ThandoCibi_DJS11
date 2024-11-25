@@ -1,4 +1,4 @@
-import ShowPreviews from "./components/ShowPreviews"
+import ShowPreviews from './components/ShowPreviews'
 
 function App() {
   return (
