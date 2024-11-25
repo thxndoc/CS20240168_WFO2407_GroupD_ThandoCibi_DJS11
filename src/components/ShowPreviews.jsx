@@ -30,8 +30,8 @@ export default function ShowPreviews() {
     }
 
     return (
-        <div>
-            <h1 className>All shows</h1>
+        <div className="container">
+            <h1 className="title">All shows</h1>
             <ul>
                 {previews.map((preview) => (
                 <li key={preview.id}>
