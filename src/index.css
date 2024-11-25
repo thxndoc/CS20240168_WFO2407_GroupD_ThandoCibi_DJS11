@@ -58,7 +58,6 @@ body {
 }
   
  /********** mobile first ***********/
-
  /*********** container for preview cards ***********/
 .container {
   width: 100%;
@@ -120,4 +119,37 @@ body {
   border-radius: 4px;
   color: var(--primary-color-grey);
   cursor: pointer;
+  font-size: 0.875rem;
+}
+
+
+ /********** tablet breakpoint ***********/
+ @media (min-width: 768px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .previews-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  
+  .card-image {
+    height: 11rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .view-button {
+    font-size: 1rem;
+  }
 }
