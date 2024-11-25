@@ -32,7 +32,11 @@ export default function ShowPreviews() {
     }
 
     if (error) {
-        return <h1 aria-live="assertive">There was an error: {error.message}</h1>
+        return (
+            <div className="error-message">
+                <h1 aria-live="assertive">There was an error: {error.message}</h1>
+            </div>
+        )
     }
 
     return (
