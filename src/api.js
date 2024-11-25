@@ -1,5 +1,5 @@
 // base url
-const baseUrl = 'https://podcast-api.netlify.pp';
+const baseUrl = 'https://podcast-api.netlify.app';
 
 // fetch data for all previews
 export async function fetchPreviewsData() {
