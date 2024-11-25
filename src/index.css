@@ -79,3 +79,29 @@ body {
 .card-content {
   padding: 1rem;
 }
+
+.card-title {
+  margin: 0;
+}
+
+.seasons {
+  margin-top: 1rem;
+}
+
+.last-updated {
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  margin-left: 0.5rem;
+}
+
+.view-button {
+  padding: 0.5rem 1rem;
+  background: var(--primary-color-yellow);
+  border: none;
+  border-radius: 4px;
+  color: var(--primary-color-grey);
+  cursor: pointer;
+}
