@@ -5,7 +5,8 @@ const baseUrl = 'https://podcast-api.netlify.app';
 export async function fetchPreviewsData() {
     const response = await fetch(`${baseUrl}/`)
     if (!response.ok) throw new Error('Failed to fetch preview data')
-    return response.json()
+    const data = await response.json()
+    return data
 }
 
 
