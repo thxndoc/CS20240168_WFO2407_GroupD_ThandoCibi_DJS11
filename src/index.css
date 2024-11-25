@@ -11,6 +11,7 @@ body {
   color: #f1f1f1;
 }
 
+ /*********** spinning loader ***********/
 .loader {
   border: 10px solid #2a2e37;
   border-top: 10px solid #D6E583; 
@@ -25,4 +26,17 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+  
+ /********** mobile first ***********/
+
+ /*********** container for preview cards ***********/
+.container {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
 }
