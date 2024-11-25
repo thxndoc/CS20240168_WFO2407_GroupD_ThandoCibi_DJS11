@@ -18,4 +18,11 @@ export async function fetchGenreById(genreId) {
     return data
 }
 
-
+// fetch specific show by Id
+export async function fetchShowById(showId) {
+    if (!showId) throw new Error('Show ID is required')
+    const response = await fetch(`${baseUrl}/id/${showId}`)
+    if (!response.ok) throw new Error('Failed to fetch show data')
+    const data = await response.json()
+    return data
+}
