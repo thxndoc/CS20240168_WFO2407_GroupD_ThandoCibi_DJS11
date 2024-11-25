@@ -1,9 +1,9 @@
-import ShowPreviews from "./components/showPreviews"
+import ShowPreviews from "./components/ShowPreviews"
 
 function App() {
   return (
     <>
-        <ShowPreviews /> 
+      <ShowPreviews /> 
     </>
   )
 }
