@@ -140,11 +140,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
-  
-  .card-image {
-    height: 11rem;
-  }
-  
+   
   .card-title {
     font-size: 1.25rem;
   }
