@@ -22,7 +22,11 @@ export default function ShowPreviews() {
     },[])
 
     if (loading) {
-        return <div className="loader"></div>
+        return (
+        <div className="loader-container">
+            <div className="loader"></div>
+        </div>
+        )
     }
 
     if (error) {
