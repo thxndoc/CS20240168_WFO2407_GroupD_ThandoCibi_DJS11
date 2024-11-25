@@ -40,7 +40,9 @@ export default function ShowPreviews() {
             <div className="previews-grid">
                 {previews.map((preview) => (
                     <div key={preview.id} className="card">
-                        <img src={preview.image} alt={preview.title} />
+                        <div className="card-img-container">
+                            <img src={preview.image} alt={preview.title} className="card-img" />
+                        </div>
 
                         <div className="card-content">
                             <h2 className="card-title">{preview.title}</h2>
@@ -55,9 +57,7 @@ export default function ShowPreviews() {
                         </div>
                         
                         <div className="genres">
-                            {preview.genres.map((genre, index) => (
-                                <span key={index} className="genre-tag">{genre}</span>
-                            ))}
+                            {/*fetch genres*/}
                         </div>
 
                         <button className="view-button">View Episodes</button>
