@@ -6,17 +6,24 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #cc8c2d;
+  background-color: #2a2e37;
   font-family: "Inter", sans-serif;
   color: #f1f1f1;
 }
 
  /*********** spinning loader ***********/
+ .loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+ }
+
 .loader {
-  border: 10px solid #2a2e37;
-  border-top: 10px solid #D6E583; 
-  border-right: 10px solid #D6E583;
-  border-bottom: 10px solid #D6E583;
+  border: 8px solid #2a2e37;
+  border-top: 8px solid #D6E583; 
+  border-right: 8px solid #D6E583;
+  border-bottom: 8px solid #D6E583;
   border-radius: 50%;
   width: 80px;
   height: 80px;
