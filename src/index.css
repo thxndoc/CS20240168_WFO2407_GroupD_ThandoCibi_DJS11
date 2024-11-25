@@ -126,8 +126,7 @@ body {
  /********** tablet breakpoint ***********/
  @media (min-width: 768px) {
   .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding:0 1.5rem;
   }
   
   .title {
@@ -147,5 +146,14 @@ body {
 
   .view-button {
     font-size: 1rem;
+  }
+}
+
+
+ /********** desktop/laptop breakpoint ***********/
+ @media (min-width: 1024px) {
+.previews-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
   }
 }
