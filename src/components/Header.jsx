@@ -6,7 +6,6 @@ export default function Header() {
         <header>
             <Link className="app-logo" to="/">
                 <img src={appLogoUrl}/>
-                Audio Hive
             </Link> 
         </header>
     )
