@@ -60,7 +60,7 @@ body {
  /********** mobile first ***********/
   /********** header ***********/
   header {
-    height: 110px;
+    height: 100px;
     display: flex;
     padding: 1rem;
   }
