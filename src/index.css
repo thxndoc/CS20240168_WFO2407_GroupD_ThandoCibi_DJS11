@@ -58,6 +58,27 @@ body {
 }
   
  /********** mobile first ***********/
+  /********** header ***********/
+  header {
+    height: 110px;
+    display: flex;
+    padding: 1rem;
+  }
+
+  .app-logo img {
+    height: 3.75rem;
+  }
+  
+.app-logo {
+    gap: 1rem;
+    color: var(--secondary-color-soft-grey);
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
  /*********** container for preview cards ***********/
 .container {
   width: 100%;
