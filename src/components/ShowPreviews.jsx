@@ -14,7 +14,8 @@ export default function ShowPreviews() {
             setLoading(true)
             try {
                 const data = await fetchPreviewsData()
-                setPreviews(data)
+                const sortedShowsAscending = data.sort((a, b) => a.title.localeCompare(b.title));
+                setPreviews(sortedShowsAscending);
             } catch (error) {
                 setError(error)
             } finally {
