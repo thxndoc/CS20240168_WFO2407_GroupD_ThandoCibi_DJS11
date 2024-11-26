@@ -59,15 +59,15 @@ body {
   
  /********** mobile first ***********/
   /********** header ***********/
-  header {
-    height: 100px;
-    display: flex;
-    padding: 1rem;
-  }
+header {
+  height: 110px;
+  display: flex;
+  padding: 1rem;
+}
 
-  .app-logo img {
-    height: 3.75rem;
-  }
+.app-logo img {
+  height: 3.75rem;
+}
   
 .app-logo {
     gap: 1rem;
@@ -146,6 +146,10 @@ body {
 
  /********** tablet breakpoint ***********/
  @media (min-width: 768px) {
+  header {
+    padding: 1.5rem;
+  }
+
   .container {
     padding:0 1.5rem;
   }
@@ -173,8 +177,8 @@ body {
 
  /********** desktop/laptop breakpoint ***********/
  @media (min-width: 1024px) {
-.previews-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
+  .previews-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
 }
