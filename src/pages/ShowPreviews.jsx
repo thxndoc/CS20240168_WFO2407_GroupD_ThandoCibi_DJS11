@@ -44,7 +44,7 @@ export default function ShowPreviews() {
 
     return (
         <div className="container">
-            <h1 className="title">All shows</h1>
+            <h1 className="title">All</h1>
 
             <div className="previews-grid">
                 {previews.map((preview) => (
