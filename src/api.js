@@ -26,3 +26,21 @@ export async function fetchShowById(showId) {
     const data = await response.json()
     return data
 }
+
+export async function fetchAllData(genreId, showId) {
+    try {
+        const [previews, genre, show] = await Promise.all([
+            fetchPreviewsData(),
+            fetchGenreById(genreId),
+            fetchShowById(showId)
+        ])
+        // return an object with ALL the fetched data
+        return {
+            previews,
+            genre,
+            show
+        }
+    } catch(error) {
+        throw new Error(`Failed to fetch data: ${error.message}`)
+    }
+}
