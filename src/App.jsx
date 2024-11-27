@@ -1,4 +1,4 @@
-import ShowPreviews from './components/ShowPreviews'
+import ShowPreviews from './pages/ShowPreviews'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Layout from './components/Layout'
 
@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route path='/' element={<Layout />}>
                 <Route index element={<ShowPreviews />} />
             </Route>
         </Routes>
