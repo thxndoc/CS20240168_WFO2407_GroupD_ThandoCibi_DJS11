@@ -6,6 +6,7 @@
   --primary-color-grey: #2a2e37;
   --primary-color-yellow: #D6E583;
   --secondary-color-soft-grey: #f1f1f1;
+  --on-hover: #C1D741;
   --error-red: #ff0000;
 }
 
@@ -141,6 +142,12 @@ header {
   color: var(--primary-color-grey);
   cursor: pointer;
   font-size: 0.875rem;
+  transition: transform 0.5s ease;
+}
+
+.view-button:hover {
+  transform: scale(1.05);
+  background-color: var(--on-hover);  
 }
 
 
