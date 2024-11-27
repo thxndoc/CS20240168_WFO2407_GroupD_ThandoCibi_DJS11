@@ -63,6 +63,7 @@ body {
 header {
   height: 110px;
   display: flex;
+  align-items: center;
   padding: 1rem;
 }
 
@@ -228,4 +229,25 @@ header {
   .show-info p {
       padding: 0 1.5rem;
     }
+}
+
+/************* favourites dot badge**************/
+.favourite {
+  position: relative;
+  display: inline-block;
+}
+
+.heart {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.favourite .dot {
+  position: absolute;
+  top: -5px;
+  right: 1;
+  width: 8px;
+  height: 8px;
+  background-color: #C1D741;
+  border-radius: 50%;
 }
