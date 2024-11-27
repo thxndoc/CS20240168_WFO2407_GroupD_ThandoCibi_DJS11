@@ -135,6 +135,7 @@ header {
 }
 
 .view-button {
+  text-decoration: none;
   padding: 0.5rem 1rem;
   background: var(--primary-color-yellow);
   border: none;
@@ -142,12 +143,13 @@ header {
   color: var(--primary-color-grey);
   cursor: pointer;
   font-size: 0.875rem;
-  transition: transform 0.5s ease;
+  display: inline-block;
+  transition: transform 0.5s ease, background-color 0.3s ease;
 }
 
 .view-button:hover {
   transform: scale(1.05);
-  background-color: var(--on-hover);  
+  background-color: var(--on-hover);
 }
 
 
