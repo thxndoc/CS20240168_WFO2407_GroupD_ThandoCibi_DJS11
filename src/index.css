@@ -80,6 +80,8 @@ header {
     font-weight: 700;
     font-size: 1.5rem;
 }
+
+/*********************************** ShowPreviews page*****************************************/
  /*********** container for preview cards ***********/
 .container {
   width: 100%;
@@ -190,4 +192,27 @@ header {
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
     }
+}
+
+/*********************************** ShowDetails page*****************************************/
+.show-details h1 {
+  text-align: center;
+  margin: 0;
+}
+
+.show-info-img-container {
+  width: 18rem;
+  height: 18rem;
+  margin: 1.5rem auto;
+}
+
+.show-info-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.show-info p {
+  margin-top: 1.5rem;
+  padding: 0 1rem;
 }
