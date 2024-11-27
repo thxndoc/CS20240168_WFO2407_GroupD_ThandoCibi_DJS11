@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { fetchPreviewsData, fetchGenreById } from "../api";
+import { Link } from "react-router-dom";
+import { fetchPreviewsData, fetchAllData, fetchGenreById } from "../api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from "@fortawesome/free-regular-svg-icons/faCalendar";
 
@@ -54,7 +55,7 @@ export default function ShowPreviews() {
 
                         <div className="card-content">
                             <h2 className="card-title">{preview.title}</h2>
-                        
+
                             <div className="seasons">
                                 {preview.seasons} {preview.seasons === 1 ? 'Season' : 'Seasons'}
                             </div>
@@ -63,12 +64,16 @@ export default function ShowPreviews() {
                                 <FontAwesomeIcon icon={faCalendar} />
                                 <p className="date">{new Date(preview.updated).toLocaleDateString()}</p>
                             </div>
-                            
+
                             <div className="genres">
-                                {/*fetch genres*/}
+                            {/*will come back to this😭*/}
                             </div>
 
-                            <button className="view-button">View Episodes</button>
+                            <Link
+                            to={`${preview.id}`}
+                            className="view-button">
+                                View Episodes
+                            </Link>
                         </div>
                     </div>
                 ))}
