@@ -5,7 +5,7 @@ import { faCalendar } from "@fortawesome/free-regular-svg-icons/faCalendar";
 
 export default function ShowPreviews() {
     const [previews, setPreviews] =useState([])
-    const [genres, setGenres] = useState()
+    const [genres, setGenres] = useState({})
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
