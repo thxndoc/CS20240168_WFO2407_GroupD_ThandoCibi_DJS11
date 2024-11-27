@@ -216,3 +216,16 @@ header {
   margin-top: 1.5rem;
   padding: 0 1rem;
 }
+
+ /********** tablet breakpoint ***********/
+ @media (min-width: 768px) {
+  .show-info p {
+    padding: 0 1.5rem;
+  }
+ }
+ /********** desktop/laptop breakpoint ***********/
+ @media (min-width: 1024px) {
+  .show-info p {
+      padding: 0 1.5rem;
+    }
+}
