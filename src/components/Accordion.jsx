@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp } from "@fortawesome/free-regular-svg-icons/faChevronUp";
-import { faChevronDown } from "@fortawesome/free-regular-svg-icons/faChevronDown";
+import { faChevronUp } from "@fortawesome/free-regular-svg-icons";
+import { faChevronDown } from "@fortawesome/free-regular-svg-icons";
 
 export default function Accordion({ title, content }) {
     const [isOpen, setIsOpen] = useState(false)
