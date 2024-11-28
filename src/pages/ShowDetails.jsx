@@ -56,28 +56,33 @@ export default function ShowDetails() {
 
                 <div className="seasons">
                     {showDetails.seasons.map((season) => (
-                        <div key={season.season} className="season">
-                            <h2>{season.title}</h2>
-                            <img src={season.image} alt={season.title} />
-                            
-                            {/* episodes for the season */}
-                            <div className="episodes">
-                                {season.episodes.map((episode) => (
-                                    <div key={episode.episode} className="episode">
-                                        <h3>{episode.title}</h3>
-                                        <p>{episode.description}</p>
-
-                                        {/* audio player */}
-                                        <audio controls>
-                                            <source src={episode.file} type="audio/mpeg"  onError={(error) => {
-                                            console.error('Audio error:', error);
-                                            }}/>
-                                            Your browser does not support the audio element.
-                                        </audio>
-                                    </div>
-                                ))}
+                        <Accordion
+                            key={season.season}
+                            title={`Season: ${season.season}`}
+                            content={(
+                            <div>
+                                <img src={season.image} alt={season.title} />
+                    
+                                 {/* episodes for the season */}
+                                 <div className="episodes">
+                                    {season.episodes.map((episode) => (
+                                        <div key={episode.episode} className="episode">
+                                            <h3>{episode.title}</h3>
+                                            <p>{episode.description}</p>
+                    
+                                            {/* audio player */}
+                                            <audio controls>
+                                                <source src={episode.file} type="audio/mpeg"  onError={(error) => {
+                                                console.error('Audio error:', error);
+                                                }}/>
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
+                    />
                     ))}
                 </div>
             </div>
