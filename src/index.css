@@ -265,6 +265,7 @@ header {
   margin-bottom: 10px;
   border-radius: 5px;
   overflow: hidden;
+  display: block;
 }
 
 .accordion-header {
@@ -275,8 +276,12 @@ header {
   cursor: pointer;
 }
 
-.accordion-header h3 {
+.accordion-header h3, h4 {
   margin: 0;
+}
+
+.accordion-header h4 {
+  margin-top: 0.5rem;
 }
 
 .accordion-content {
