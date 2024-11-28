@@ -8,8 +8,9 @@ export default function Header() {
             <Link className="app-logo" to="/">
                 <img src={appLogoUrl}/>
             </Link> 
-            
-            <FavouritesDotBadge />
+            <Link className="heart-icon-link" to="/favourites">
+                <FavouritesDotBadge />
+            </Link>
         </header>
     )
 }
