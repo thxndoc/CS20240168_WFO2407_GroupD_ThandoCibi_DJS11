@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp } from "@fortawesome/free-regular-svg-icons";
-import { faChevronDown } from "@fortawesome/free-regular-svg-icons";
+import { faPlusSquare } from "@fortawesome/free-regular-svg-icons/faPlusSquare";
+import { faMinusSquare } from "@fortawesome/free-regular-svg-icons/faMinusSquare";
 
 export default function Accordion({ title, content }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -12,8 +12,8 @@ export default function Accordion({ title, content }) {
                 <h3>{title}</h3>
                 <button className="toggle-button">
                     {isOpen ? 
-                    <FontAwesomeIcon icon={faChevronDown}/> : 
-                    <FontAwesomeIcon icon={faChevronUp} />
+                    <FontAwesomeIcon icon={faMinusSquare}/> : 
+                    <FontAwesomeIcon icon={faPlusSquare} />
                     }
                 </button>
             </div>
