@@ -270,7 +270,7 @@ header {
 .accordion-header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 0.625rem;
   background-color: var(--primary-color-grey);
   cursor: pointer;
 }
@@ -280,14 +280,21 @@ header {
 }
 
 .accordion-content {
-  padding: 10px;
+  padding: 0.625rem;
   background-color: var(--primary-color-grey);
 }
 
 .toggle-button {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   cursor: pointer;
   color: var(--secondary-color-soft-grey);
+}
+
+.seasons img {
+  width: 18rem;
+  height: 18rem;
+  display: block;
+  margin: 0 auto;
 }
