@@ -296,5 +296,11 @@ header {
   width: 18rem;
   height: 18rem;
   display: block;
-  margin: 0 auto;
+  margin: 1rem auto;
+}
+
+.episode {
+  border: 1px solid var(--secondary-color-soft-grey);
+  margin-bottom: 1rem;
+  padding: 1rem;
 }
