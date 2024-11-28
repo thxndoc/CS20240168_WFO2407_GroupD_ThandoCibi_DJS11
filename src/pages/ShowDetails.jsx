@@ -58,7 +58,8 @@ export default function ShowDetails() {
                     {showDetails.seasons.map((season) => (
                         <Accordion
                             key={season.season}
-                            title={`Season: ${season.season} Episodes: ${season.episodes.length}`}
+                            title={`Season: ${season.season}`}
+                            episodesInSeason={`Episodes in season: ${season.episodes.length}`}
                             content={(
                             <div>
                                 <img src={season.image} alt={season.title} />
