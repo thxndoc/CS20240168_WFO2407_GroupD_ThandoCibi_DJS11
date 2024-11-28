@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; // get dynamic show id
 import { fetchShowById } from "../api";
 import Accordion from "../components/Accordion";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from "@fortawesome/free-regular-svg-icons/faHeart";
+
 
 export default function ShowDetails() {
     const { showId } = useParams(); // get the show id from url
@@ -79,6 +82,16 @@ export default function ShowDetails() {
                                                 }}/>
                                                 Your browser does not support the audio element.
                                             </audio>
+
+                                            {/* favourites(heart) button */}
+                                            <button
+                                            className={`favourite-button ${isFavourite(episode) ? "added-to-favs" : ""}`}
+                                            onClick={() => toggleFavorite(episode)}
+                                            >
+                                                {isFavorite(episode) ? 
+                                                <FontAwesomeIcon icon={faHeart} /> : 
+                                                <FontAwesomeIcon icon={faHeart} className='heart' />}
+                                            </button>
                                         </div>
                                     ))}
                                 </div>
