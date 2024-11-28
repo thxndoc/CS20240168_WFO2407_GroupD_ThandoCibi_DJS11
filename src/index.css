@@ -63,6 +63,7 @@ body {
 header {
   height: 110px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
 }
@@ -71,17 +72,6 @@ header {
   height: 3.75rem;
 }
   
-.app-logo {
-    gap: 1rem;
-    color: var(--secondary-color-soft-grey);
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-
 /*********************************** ShowPreviews page*****************************************/
  /*********** container for preview cards ***********/
 .container {
@@ -251,6 +241,10 @@ header {
   background-color: #C1D741;
   border-radius: 50%;
 }
+
+.heart-icon-link {
+  color: var(--secondary-color-soft-grey);
+}
 /********************* seasons page *********************/
 .seasons {
   padding: 0 1rem;
@@ -282,6 +276,7 @@ header {
 
 .accordion-header h4 {
   margin-top: 0.5rem;
+  font-weight: normal;
 }
 
 .accordion-content {
