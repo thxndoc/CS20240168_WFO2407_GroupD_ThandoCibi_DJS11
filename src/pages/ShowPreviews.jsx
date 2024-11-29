@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { fetchPreviewsData, fetchPreviewAndGenreData } from "../api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from "@fortawesome/free-regular-svg-icons/faCalendar";
+import SortButton from "../components/SortButton";
 
 export default function ShowPreviews() {
     const [previews, setPreviews] =useState([])
+    const [sortedPreviews, setSortedPreviews] = useState([])
     const [genreMap, setGenreMap] = useState({})
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
@@ -19,7 +21,8 @@ export default function ShowPreviews() {
                 const previewData = await fetchPreviewsData()
 
                 const sortedShowsAscending = previewData.sort((a, b) => a.title.localeCompare(b.title));
-                setPreviews(sortedShowsAscending);
+                setPreviews(sortedShowsAscending)
+                setSortedPreviews(sortedShowsAscending)
                 setGenreMap(genreMapping)
             } catch (error) {
                 setError(error)
@@ -29,6 +32,22 @@ export default function ShowPreviews() {
         }
         loadPreviews();
     },[])
+
+    const handleSorting = (option) => {
+        let sorted = [...previews];
+
+        if (option === "A-Z") {
+            sorted.sort((a, b) => a.title.localeCompare(b.title));
+        } else if (option === "Z-A") {
+            sorted.sort((a, b) => b.title.localeCompare(a.title));
+        } else if (option === "recentlyUpdated") {
+            sorted.sort((a, b) => new Date(b.updated) - new Date(a.updated));
+        } else if (option === "leastRecentlyUpdated") {
+            sorted.sort((a, b) => new Date(a.updated) - new Date(b.updated));
+        }
+
+        setSortedPreviews(sorted) // update the sorted previews based on selected option
+    };
 
     if (loading) {
         return (
@@ -49,9 +68,10 @@ export default function ShowPreviews() {
     return (
         <div className="container">
             <h1 className="title">All</h1>
+            <SortButton onSort={handleSorting} />
 
             <div className="previews-grid">
-                {previews.map((preview) => (
+                {sortedPreviews.map((preview) => (
                     <div key={preview.id} className="card">
                         <div className="card-img-container">
                             <img src={preview.image} alt={preview.title} className="card-img" />
