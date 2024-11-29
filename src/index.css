@@ -369,14 +369,24 @@ header {
   padding: 1rem;
 }
 
+.episode p {
+  padding: 0;
+}
+
 .favourite-icon-link {
   font-size: 1.5rem;
   color: var(--primary-color-yellow);
   cursor: pointer;
 }
 
-.audio-and-heart-container {
+.episode-and-fav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+audio {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
 }
