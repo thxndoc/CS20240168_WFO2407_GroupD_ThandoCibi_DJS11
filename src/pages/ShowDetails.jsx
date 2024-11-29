@@ -129,7 +129,7 @@ export default function ShowDetails() {
                                  <div className="episodes">
                                     {season.episodes.map((episode) => (
                                         <div key={episode.episode} className="episode">
-                                            <div>
+                                            <div className="episode-and-fav-container">
                                                 <h3>{`Episode: ${episode.episode}`}</h3>
 
                                                 {/* favourites(heart) button */}
