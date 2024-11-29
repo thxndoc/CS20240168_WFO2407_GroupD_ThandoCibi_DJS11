@@ -39,6 +39,30 @@ export default function ShowDetails() {
         loadShowDetails();
     }, []);
 
+    const handleToggleFavourite = (episode, show, season) => {
+        setFavourites((prevFavourites) => {
+            const isAlreadyFavourite = prevFavourites.some(
+              (fav) =>
+                fav.episode.episode === episode.episode &&
+                fav.show === show &&
+                fav.season === season
+            );
+      
+            if (isAlreadyFavourite) {
+              // remove from favourites
+              return prevFavourites.filter(
+                (fav) =>
+                  !(fav.episode.episode === episode.episode &&
+                    fav.show === show &&
+                    fav.season === season)
+              );
+            } else {
+              // add to favourites
+              return [...prevFavourites, { episode, show, season, dateAndTimeAdded: new Date().toISOString() }];
+            }
+          });
+    }
+
     if (loading) {
         return (
             <div className="loader-container">
