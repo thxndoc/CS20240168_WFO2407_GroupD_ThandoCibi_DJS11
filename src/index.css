@@ -246,10 +246,6 @@ header {
   color: var(--secondary-color-soft-grey);
 }
 /********************* seasons page *********************/
-.seasons {
-  padding: 0 1rem;
-}
-
 .seasons-heading {
   text-align: center;
 }
