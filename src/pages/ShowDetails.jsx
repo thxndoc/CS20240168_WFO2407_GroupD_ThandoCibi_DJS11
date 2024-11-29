@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom"; // get dynamic show id
 import { fetchShowById } from "../api";
 import Accordion from "../components/Accordion";
@@ -94,6 +95,12 @@ export default function ShowDetails() {
 
     return (
         <div className="show-details">
+            <Link
+            to="/"
+            relative="path"
+            className="back-button"
+            >Back to all shows
+            </Link>
             <h1>{showDetails.title}</h1>
             <div className="show-info">
                 <div className="show-info-img-container">
