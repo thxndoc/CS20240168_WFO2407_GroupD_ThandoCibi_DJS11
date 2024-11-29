@@ -22,7 +22,8 @@ For this project, we were tasked with building a podcast app from scratch using 
 - I struggled to get the heart icon to remain in its filled state when toggled (when added to Favourites page) after a page refresh.
 
 ## Contact
-Email - uthandocibi@gmail.com
+Email - uthandocibi@gmail.com<br>
+------------------------
 
 [DJS11] Starter Instructions for the Final Portfolio Piece Submission 🚀
 
@@ -35,6 +36,7 @@ Email - uthandocibi@gmail.com
 	- [What I did](#what-i-did)
 	- [Challenges](#challenges)
 	- [Contact](#contact)
+	- [Email - uthandocibi@gmail.com](#email---uthandocibigmailcom)
 	- [🤖 Technology](#-technology)
 	- [📦Data](#data)
 		- [Relationships](#relationships)
