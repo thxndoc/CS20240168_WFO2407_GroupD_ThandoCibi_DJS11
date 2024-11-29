@@ -18,14 +18,32 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--secondary-color-soft-grey);
 }
+/************ sort button ***********/
+.sort-button {
+  max-width: 10%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  background-color: var(--primary-color-yellow);
+  border: none;
+  color: var(--secondary-color-soft-grey);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.sort-button button {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  color: var(--primary-color-grey);
+}
 
- /*********** spinning loader ***********/
- .loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
- }
+/*********** spinning loader ***********/
+.loader-container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
 
 .loader {
   border: 8px solid var(--primary-color-grey);
