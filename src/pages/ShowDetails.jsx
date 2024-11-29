@@ -60,8 +60,17 @@ export default function ShowDetails() {
               // add to favourites
               return [...prevFavourites, { episode, show, season, dateAndTimeAdded: new Date().toISOString() }];
             }
-          });
+          })
     }
+
+    const isFavourite = (episode, show, season) => {
+        return favourites.some(
+          (fav) =>
+            fav.episode.episode === episode.episode &&
+            fav.show === show &&
+            fav.season === season
+        )
+      }
 
     if (loading) {
         return (
