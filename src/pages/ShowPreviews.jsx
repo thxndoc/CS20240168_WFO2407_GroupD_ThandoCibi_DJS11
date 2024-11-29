@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchPreviewsData, fetchAllData, fetchGenreById } from "../api";
+import { fetchPreviewsData, fetchPreviewAndGenreData } from "../api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from "@fortawesome/free-regular-svg-icons/faCalendar";
 
 export default function ShowPreviews() {
     const [previews, setPreviews] =useState([])
-    const [genres, setGenres] = useState({})
+    const [genreMap, setGenreMap] = useState({})
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
@@ -14,9 +14,13 @@ export default function ShowPreviews() {
         async function loadPreviews() {
             setLoading(true)
             try {
-                const data = await fetchPreviewsData()
-                const sortedShowsAscending = data.sort((a, b) => a.title.localeCompare(b.title));
+                const genreMapping = await fetchPreviewAndGenreData()
+
+                const previewData = await fetchPreviewsData()
+
+                const sortedShowsAscending = previewData.sort((a, b) => a.title.localeCompare(b.title));
                 setPreviews(sortedShowsAscending);
+                setGenreMap(genreMapping)
             } catch (error) {
                 setError(error)
             } finally {
@@ -25,6 +29,30 @@ export default function ShowPreviews() {
         }
         loadPreviews();
     },[])
+
+    const handleToggleFavourite = (episode, show, season) => {
+        setFavourites((prevFavourites) => {
+            const isAlreadyFavourite = prevFavourites.some(
+              (fav) =>
+                fav.episode.episode === episode.episode &&
+                fav.show === show &&
+                fav.season === season
+            );
+      
+            if (isAlreadyFavourite) {
+              // remove from favourites
+              return prevFavourites.filter(
+                (fav) =>
+                  !(fav.episode.episode === episode.episode &&
+                    fav.show === show &&
+                    fav.season === season)
+              );
+            } else {
+              // add to favourites
+              return [...prevFavourites, { episode, show, season, dateAndTimeAdded: new Date().toISOString() }];
+            }
+          });
+    }
 
     if (loading) {
         return (
@@ -66,7 +94,13 @@ export default function ShowPreviews() {
                             </div>
 
                             <div className="genres">
-                            {/*will come back to this😭*/}
+                                <p>
+                                Genres:{' '}
+                                    {preview.genres
+                                        .map((genreId) => genreMap[genreId])
+                                        .join(", ")
+                                    } 
+                                </p>
                             </div>
 
                             <Link
