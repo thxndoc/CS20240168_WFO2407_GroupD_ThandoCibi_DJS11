@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import SortButton from "../components/SortButton";
@@ -50,20 +51,28 @@ export default function Favourites() {
 
   return (
     <div className="favourites-page">
+        <Link
+        to="/"
+        relative="path"
+        className="back-button"
+        >Back to all shows
+        </Link>
+
         <SortButton onSort={handleSorting} />
+       
         <h1>Your Saved Episodes</h1>
         <div className="favourites-list">
         {sortedFavourites.map((fav) => (
           <div key={`${fav.episode.episode} ${fav.show} ${fav.season}`} className="favourite-item">
             {/* episode image */}
-            <img src={fav.season.image} alt={fav.episode.title} className="episode-image" />
+            <img src={fav.image} alt={fav.episode.title} className="episode-image" />
 
             {/* episode info */}
             <div className="episode-info">
               <h3>{fav.episode.title}</h3>
               <p>Show: {fav.show}</p>
               <p>Season: {fav.season}, Episode: {fav.episode.episode}</p>
-              <p>Date Added: {new Date(fav.dateAndTimeAdded).toLocaleString()}</p>
+              <p>Added to favourites: {new Date(fav.dateAndTimeAdded).toLocaleString()}</p>
                 <div>
                     {/* audio player */}
                     <audio controls>
