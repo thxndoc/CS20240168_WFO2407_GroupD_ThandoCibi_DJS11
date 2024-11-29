@@ -103,6 +103,12 @@ header {
   padding: 1rem;
 }
 
+.logo-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 .app-logo img {
   height: 3.75rem;
 }
@@ -394,9 +400,7 @@ audio {
 /********** favourites page ***********/
 .empty-favourites {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .favourites-page {

@@ -97,7 +97,7 @@ export default function Favourites() {
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-                    
+
                 </div>
             </div>
         ))}
