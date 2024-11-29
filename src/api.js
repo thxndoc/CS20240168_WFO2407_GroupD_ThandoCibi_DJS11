@@ -27,20 +27,26 @@ export async function fetchShowById(showId) {
     return data
 }
 
-export async function fetchAllData(genreId, showId) {
+export async function fetchPreviewAndGenreData() {
     try {
-        const [previews, genre, show] = await Promise.all([
-            fetchPreviewsData(),
-            fetchGenreById(genreId),
-            fetchShowById(showId)
-        ])
-        // return an object with ALL the fetched data
-        return {
-            previews,
-            genre,
-            show
-        }
-    } catch(error) {
-        throw new Error(`Failed to fetch data: ${error.message}`)
+        
+        const previewData = await fetchPreviewsData()
+
+        // collect all unique genre IDs from preview data
+        const genreIds = [...new Set(previewData.flatMap(podcast => podcast.genres))]
+
+        // fetch genre data for each genre ID in parallel using map and Promise.all
+        const genres = await Promise.all(genreIds.map(genreId => fetchGenreById(genreId)))
+
+        // create an object that maps genre IDs to their titles using reduce
+        const genreMapping = genres.reduce((acc, genreData, index) => {
+            const genreId = genreIds[index] // corresponding genreId for each genreData
+            acc[genreId] = genreData.title
+            return acc
+        }, {})
+
+        return genreMapping
+    } catch (error) {
+        console.error('Error fetching preview and genre data:', error)
     }
 }
