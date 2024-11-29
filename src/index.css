@@ -234,6 +234,10 @@ header {
   color: var(--secondary-color-soft-grey);
 }
 
+.show-details .back-button:hover {
+  color: var(--on-hover);
+}
+
 .show-details h1 {
   text-align: center;
   margin: 0;
@@ -257,17 +261,30 @@ header {
   padding: 0 1rem;
 }
 
+.seasons {
+  padding: 0 1rem;
+}
+
  /********** tablet breakpoint ***********/
- @media (min-width: 768px) {
+@media (min-width: 768px) {
   .show-info p {
     padding: 0 1.5rem;
   }
- }
+
+  .seasons {
+    padding: 0 1.5rem;
+  }
+}
+
  /********** desktop/laptop breakpoint ***********/
- @media (min-width: 1024px) {
+@media (min-width: 1024px) {
   .show-info p {
       padding: 0 1.5rem;
     }
+
+  .seasons {
+    padding: 0 1.5rem;
+  }
 }
 
 /************* favourites dot badge**************/
@@ -294,10 +311,12 @@ header {
 .heart-icon-link {
   color: var(--secondary-color-soft-grey);
 }
+
 /********************* seasons page *********************/
 .seasons-heading {
   text-align: center;
 }
+
 /************ accordion ************/
 .accordion {
   border: 1px solid var(--secondary-color-soft-grey);
