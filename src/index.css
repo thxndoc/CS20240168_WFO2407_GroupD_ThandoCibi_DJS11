@@ -399,6 +399,15 @@ audio {
   align-items: center;
 }
 
+.favourites-page {
+  padding: 0 1rem;
+}
+
+.favourites-page h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
 .favs-back-button {
   display: block;
   text-align: center;
@@ -408,4 +417,20 @@ audio {
 
 .favs-back-button:hover {
   color: var(--on-hover);
+}
+
+.favourite-item {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--secondary-color-soft-grey);
+}
+
+.title-and-trash-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-icon {
+  cursor: pointer;
 }
