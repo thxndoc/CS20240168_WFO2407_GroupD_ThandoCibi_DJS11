@@ -20,7 +20,7 @@ body {
 }
 /************ sort button ***********/
 .sort-button {
-  max-width: 10%;
+  max-width: 30%;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 1rem;
@@ -31,11 +31,28 @@ body {
   cursor: pointer;
 }
 .sort-button button {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0;
   background: none;
   border: none;
+  font-size: 1rem;
   color: var(--primary-color-grey);
 }
+
+.dropdown {
+  padding: 0;
+  list-style: none;
+  color: var(--primary-color-grey);
+}
+
+.dropdown li {
+  text-align: center;
+  padding: 0.25rem;
+}
+
+.dropdown li:hover {
+  background-color: var(--on-hover);
+}
+
 
 /*********** spinning loader ***********/
 .loader-container {
