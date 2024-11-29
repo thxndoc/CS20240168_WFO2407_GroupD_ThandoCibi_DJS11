@@ -132,7 +132,15 @@ export default function ShowDetails() {
 
                                                 {/* favourites(heart) button */}
                                                 <div className="favourite-icon">
-                                                
+                                                <FontAwesomeIcon
+                                                icon={
+                                                    isFavourite(episode, showDetails.title, season.season)
+                                                        ? solidHeart 
+                                                        : regularHeart
+                                                }
+                                                onClick={() => handleToggleFavourite(episode, showDetails.title, season.season)}
+                                                className="favourite-icon-link"
+                                                />
                                                 </div>
                                             </div>
                                         </div>
