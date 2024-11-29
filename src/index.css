@@ -390,3 +390,11 @@ audio {
   margin: 0 auto;
   border-radius: 8px;
 }
+
+/********** favourites page ***********/
+.empty-favourites {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
