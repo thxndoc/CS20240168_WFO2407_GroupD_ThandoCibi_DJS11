@@ -13,6 +13,17 @@ export default function ShowDetails() {
     const [error, setError] = useState(null)
     const [favourites, setFavourites] = useState([])
 
+    // load favourites from local storage
+    useEffect(() => {
+        const savedFavourites = JSON.parse(localStorage.getItem("favourites") || "[]");
+        setFavourites(savedFavourites);
+      }, []);
+    
+      // save favourites to localStorage whenever they change
+      useEffect(() => {
+        localStorage.setItem("favourites", JSON.stringify(favourites));
+      }, [favourites]);
+
     useEffect(() => {
         async function loadShowDetails() {
             setLoading(true);
