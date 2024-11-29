@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart as solidHeart, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as solidHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export default function Favourites() {
     const [favourites, setFavourites] = useState([])
@@ -23,4 +23,8 @@ export default function Favourites() {
             </div>
         );
     }
+
+    return (
+
+    )
 }
