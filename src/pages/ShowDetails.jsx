@@ -11,7 +11,7 @@ export default function ShowDetails() {
     const [showDetails, setShowDetails] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const [isFavourite, setIsFavourite] = useState(false)
+    const [favourites, setFavourites] = useState([])
 
     useEffect(() => {
         async function loadShowDetails() {
@@ -19,9 +19,6 @@ export default function ShowDetails() {
             try {
                 const data = await fetchShowById(showId)
                 setShowDetails(data)
-
-                const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
-                setIsFavourite(favourites.some(fav => fav.id === data.id))
             } catch (error) {
                 setError(error);
             } finally {
@@ -30,20 +27,6 @@ export default function ShowDetails() {
         }
         loadShowDetails();
     }, []);
-
-    const toggleFavourite = () => {
-        setIsFavourite(!isFavourite)
-
-        let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
-
-        if (!isFavourite) {
-            favourites.push(showDetails)
-        } else {
-            favourites = favourites.filter(fav => fav.id !== showDetails.id)
-        }
-
-        localStorage.setItem('favourites', JSON.stringify(favourites))
-    }
 
     if (loading) {
         return (
@@ -105,11 +88,7 @@ export default function ShowDetails() {
 
                                                 {/* favourites(heart) button */}
                                                 <div className="favourite-icon">
-                                                    <FontAwesomeIcon
-                                                        icon={isFavourite ? solidHeart : regularHeart}
-                                                        onClick={toggleFavourite}
-                                                        className="favourite-icon-link"
-                                                    />
+                                                
                                                 </div>
                                             </div>
                                         </div>
