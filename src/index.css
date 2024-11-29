@@ -20,7 +20,7 @@ body {
 }
 /************ sort button ***********/
 .sort-button {
-  max-width: 30%;
+  max-width: 100px;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 1rem;
