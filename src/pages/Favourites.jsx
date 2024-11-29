@@ -44,6 +44,12 @@ export default function Favourites() {
   if (favourites.length === 0) {
     return (
       <div className="empty-favourites">
+        <Link
+        to="/"
+        relative="path"
+        className="favs-back-button"
+        >Back to all shows
+        </Link>
         <h2>No saved favourites yet...</h2>
       </div>
     );
@@ -54,7 +60,7 @@ export default function Favourites() {
         <Link
         to="/"
         relative="path"
-        className="back-button"
+        className="favs-back-button"
         >Back to all shows
         </Link>
 
