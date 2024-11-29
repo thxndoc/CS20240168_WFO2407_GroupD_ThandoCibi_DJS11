@@ -7,6 +7,7 @@ export default function Favourites() {
 
     useEffect(()=> {
         const favouritedShows = JSON.parse(localStorage.getItem('favourites')) || [];
+        console.log(favouritedShows)
         setFavourites(favouritedShows);
     }, [])
 
@@ -23,8 +24,5 @@ export default function Favourites() {
             </div>
         );
     }
-
-    return (
-
-    )
+    
 }
