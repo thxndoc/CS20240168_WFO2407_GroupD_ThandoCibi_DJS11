@@ -69,34 +69,37 @@ export default function Favourites() {
         <h1>Your Saved Episodes</h1>
         <div className="favourites-list">
         {sortedFavourites.map((fav) => (
-          <div key={`${fav.episode.episode} ${fav.show} ${fav.season}`} className="favourite-item">
-            {/* episode image */}
-            <img src={fav.image} alt={fav.episode.title} className="episode-image" />
+            <div key={`${fav.episode.episode} ${fav.show} ${fav.season}`} className="favourite-item">
 
-            {/* episode info */}
-            <div className="episode-info">
-              <h3>{fav.episode.title}</h3>
-              <p>Show: {fav.show}</p>
-              <p>Season: {fav.season}, Episode: {fav.episode.episode}</p>
-              <p>Added to favourites: {new Date(fav.dateAndTimeAdded).toLocaleString()}</p>
-                <div>
-                    {/* audio player */}
-                    <audio controls>
-                        <source src={fav.episode.file} type="audio/mpeg" />
-                        Your browser does not support the audio element.
-                    </audio>
+                {/* episode info */}
+                <div className="episode-info">
+                    <div className="title-and-trash-container">
+                        <h3>{fav.episode.title}</h3>
+
+                        {/* remove button */}
+                        <FontAwesomeIcon
+                        icon={faTrash}
+                        className="remove-icon"
+                        onClick={() =>
+                            removeFavourite(`${fav.episode.episode} ${fav.show} ${fav.season}`)
+                        }
+                        /> 
+                    </div>
+
+                    <p>Show: {fav.show}</p>
+                    <p>Season: {fav.season}, Episode: {fav.episode.episode}</p>
+                    <p>Added to favourites: {new Date(fav.dateAndTimeAdded).toLocaleString()}</p>
+
+                    <div>
+                        {/* audio player */}
+                        <audio controls>
+                            <source src={fav.episode.file} type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
                     
-                    {/* remove button */}
-                    <FontAwesomeIcon
-                    icon={faTrash}
-                    className="remove-icon"
-                    onClick={() =>
-                        removeFavourite(`${fav.episode.episode} ${fav.show} ${fav.season}`)
-                    }
-                    />
                 </div>
-              </div>
-          </div>
+            </div>
         ))}
       </div>
     </div>
