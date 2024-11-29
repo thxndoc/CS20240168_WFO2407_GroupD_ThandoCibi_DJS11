@@ -17,8 +17,11 @@ export default function ShowDetails() {
         async function loadShowDetails() {
             setLoading(true);
             try {
-                const data = await fetchShowById(showId);
-                setShowDetails(data);
+                const data = await fetchShowById(showId)
+                setShowDetails(data)
+
+                const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+                setIsFavourite(favourites.some(fav => fav.id === data.id))
             } catch (error) {
                 setError(error);
             } finally {
@@ -27,6 +30,21 @@ export default function ShowDetails() {
         }
         loadShowDetails();
     }, []);
+
+    const toggleFavourite = () => {
+        setIsFavourite(!isFavourite)
+
+        let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+
+        if (!isFavourite) {
+            favourites.push(showDetails)
+        } else {
+            favourites = favourites.filter(fav => fav.id !== showDetails.id)
+        }
+
+        localStorage.setItem('favourites', JSON.stringify(favourites))
+    }
+
     if (loading) {
         return (
             <div className="loader-container">
