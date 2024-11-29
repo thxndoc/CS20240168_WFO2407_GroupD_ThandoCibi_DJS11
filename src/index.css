@@ -226,9 +226,19 @@ header {
 }
 
 /*********************************** ShowDetails page*****************************************/
+.show-details .back-button-container {
+  text-align: center;
+}
+
+.show-details .back-button {
+  color: var(--secondary-color-soft-grey);
+}
+
+
 .show-details h1 {
   text-align: center;
   margin: 0;
+  margin-top: 1rem;
 }
 
 .show-info-img-container {
