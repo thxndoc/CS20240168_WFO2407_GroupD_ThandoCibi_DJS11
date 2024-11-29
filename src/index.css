@@ -398,3 +398,14 @@ audio {
   justify-content: center;
   align-items: center;
 }
+
+.favs-back-button {
+  display: block;
+  text-align: center;
+  color: var(--secondary-color-soft-grey);
+  margin-bottom: 1rem;
+}
+
+.favs-back-button:hover {
+  color: var(--on-hover);
+}
