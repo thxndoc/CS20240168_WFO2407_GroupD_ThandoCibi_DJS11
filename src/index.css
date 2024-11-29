@@ -127,7 +127,12 @@ header {
   margin-left: 0.5rem;
 }
 
+.genres p {
+  margin: 0;
+}
+
 .view-button {
+  margin-top: 1rem;
   text-decoration: none;
   padding: 0.5rem 1rem;
   background: var(--primary-color-yellow);
@@ -299,4 +304,16 @@ header {
   border: 1px solid var(--secondary-color-soft-grey);
   margin-bottom: 1rem;
   padding: 1rem;
+}
+
+.favourite-icon-link {
+  font-size: 1.5rem;
+  color: var(--primary-color-yellow);
+  cursor: pointer;
+}
+
+.audio-and-heart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
