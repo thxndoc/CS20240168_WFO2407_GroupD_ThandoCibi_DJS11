@@ -11,6 +11,7 @@ export default function ShowDetails() {
     const [showDetails, setShowDetails] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const [isFavourite, setIsFavourite] = useState(false)
 
     useEffect(() => {
         async function loadShowDetails() {
