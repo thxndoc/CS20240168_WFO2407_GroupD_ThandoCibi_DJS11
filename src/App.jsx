@@ -2,6 +2,7 @@ import ShowPreviews from './pages/ShowPreviews'
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Layout from './components/Layout'
 import ShowDetails from './pages/ShowDetails'
+import Favourites from './pages/Favourites'
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
             <Route path='/' element={<Layout />}>
                 <Route index element={<ShowPreviews />} />
                 <Route path="/:showId" element={<ShowDetails />} />
-                {/* <Route path="/favourites" element={<Favourites />} /> */}
+                <Route path="/favourites" element={<Favourites />} />
             </Route>
         </Routes>
     </BrowserRouter>
