@@ -93,23 +93,25 @@ export default function ShowDetails() {
                                             <h3>{`Episode: ${episode.episode}`}</h3>
                                             <h3>{episode.title}</h3>
                                             <p>{episode.description}</p>
-                    
-                                            {/* audio player */}
-                                            <audio controls>
-                                                <source src={episode.file} type="audio/mpeg"  onError={(error) => {
-                                                console.error('Audio error:', error);
-                                                }}/>
-                                                Your browser does not support the audio element.
-                                            </audio>
 
-                                            {/* favourites(heart) button */}
-                                             <div className="favourite-icon">
+                                            <div className="audio-and-heart-container">
+                                                {/* audio player */}
+                                                <audio controls>
+                                                    <source src={episode.file} type="audio/mpeg"  onError={(error) => {
+                                                    console.error('Audio error:', error)
+                                                    }}/>
+                                                    Your browser does not support the audio element.
+                                                </audio>
+
+                                                {/* favourites(heart) button */}
+                                                <div className="favourite-icon">
                                                     <FontAwesomeIcon
                                                         icon={isFavourite ? solidHeart : regularHeart}
                                                         onClick={toggleFavourite}
-                                                        className="heart-icon-link"
+                                                        className="favourite-icon-link"
                                                     />
                                                 </div>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
