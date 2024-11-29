@@ -129,18 +129,8 @@ export default function ShowDetails() {
                                  <div className="episodes">
                                     {season.episodes.map((episode) => (
                                         <div key={episode.episode} className="episode">
-                                            <h3>{`Episode: ${episode.episode}`}</h3>
-                                            <h3>{episode.title}</h3>
-                                            <p>{episode.description}</p>
-
-                                            <div className="audio-and-heart-container">
-                                                {/* audio player */}
-                                                <audio controls>
-                                                    <source src={episode.file} type="audio/mpeg"  onError={(error) => {
-                                                    console.error('Audio error:', error)
-                                                    }}/>
-                                                    Your browser does not support the audio element.
-                                                </audio>
+                                            <div>
+                                                <h3>{`Episode: ${episode.episode}`}</h3>
 
                                                 {/* favourites(heart) button */}
                                                 <div className="favourite-icon">
@@ -154,6 +144,18 @@ export default function ShowDetails() {
                                                 className="favourite-icon-link"
                                                 />
                                                 </div>
+                                            </div>
+                                            <h3>{episode.title}</h3>
+                                            <p>{episode.description}</p>
+
+                                            <div className="audio-container">
+                                                {/* audio player */}
+                                                <audio controls>
+                                                    <source src={episode.file} type="audio/mpeg"  onError={(error) => {
+                                                    console.error('Audio error:', error)
+                                                    }}/>
+                                                    Your browser does not support the audio element.
+                                                </audio>
                                             </div>
                                         </div>
                                     ))}
