@@ -1,14 +1,40 @@
-# 🎵 PODCAST APP | PORTFOLIO PIECE 💿
+# Podcast App | Portfolio Piece 💿
 [Link to app deployed on Netlify](https://audio-hive.netlify.app/)
 
+## Project Overview
+For this project, we were tasked with building a podcast app from scratch using React as the core framework. We also had the option to use TypeScript as a variant. The app required fetching data from three different endpoints.
 
+## Tech used
+	• HTML
+	• CSS
+	• JavaScript
+	• React
+	• React Router
+	• Font Awesome
+
+## What I did
+	• While planning I created a logo with Inkscape
+	• I setup an api.js file to handle the API interactions(i.e calls)
+	• Created a folder structure to separate components from pages
+
+## Challenges
+- When importing ShowPreviews, VSCode auto completed the file name for me and I didn’t notice that that the 'S' was lowercase. This resulted in Netlify failing to deploy each time I made changes, even though everything worked fine locally 😭
+- I struggled to get the heart icon to remain in its filled state when toggled (when added to Favourites page) after a page refresh.
+
+## Contact
+Email - uthandocibi@gmail.com
 
 [DJS11] Starter Instructions for the Final Portfolio Piece Submission 🚀
 
 <!-- omit in toc -->
 **Table of Contents**
 
-- [🎵 PODCAST APP | PORTFOLIO PIECE 💿](#-podcast-app--portfolio-piece-)
+- [Podcast App | Portfolio Piece 💿](#podcast-app--portfolio-piece-)
+	- [Project Overview](#project-overview)
+	- [Tech used](#tech-used)
+	- [What I did](#what-i-did)
+	- [Challenges](#challenges)
+	- [Contact](#contact)
 	- [🤖 Technology](#-technology)
 	- [📦Data](#data)
 		- [Relationships](#relationships)
