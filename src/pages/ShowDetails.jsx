@@ -103,9 +103,13 @@ export default function ShowDetails() {
                                             </audio>
 
                                             {/* favourites(heart) button */}
-                                            {/* <button
-                                            
-                                            </button> */}
+                                             <div className="favourite-icon">
+                                                    <FontAwesomeIcon
+                                                        icon={isFavourite ? solidHeart : regularHeart}
+                                                        onClick={toggleFavourite}
+                                                        className="heart-icon-link"
+                                                    />
+                                                </div>
                                         </div>
                                     ))}
                                 </div>
