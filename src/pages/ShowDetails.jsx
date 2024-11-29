@@ -3,14 +3,14 @@ import { useParams } from "react-router-dom"; // get dynamic show id
 import { fetchShowById } from "../api";
 import Accordion from "../components/Accordion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from "@fortawesome/free-regular-svg-icons/faHeart";
-
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 
 export default function ShowDetails() {
-    const { showId } = useParams(); // get the show id from url
-    const [showDetails, setShowDetails] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const { showId } = useParams() // get the show id from url
+    const [showDetails, setShowDetails] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         async function loadShowDetails() {
@@ -31,7 +31,7 @@ export default function ShowDetails() {
             <div className="loader-container">
                 <div className="loader"></div>
             </div>
-        );
+        )
     }
 
     if (error) {
@@ -39,7 +39,7 @@ export default function ShowDetails() {
             <div className="error-message">
                 <h1 aria-live="assertive">There was an error: {error.message}</h1>
             </div>
-        );
+        )
     }
 
     if (!showDetails) {
@@ -84,14 +84,9 @@ export default function ShowDetails() {
                                             </audio>
 
                                             {/* favourites(heart) button */}
-                                            <button
-                                            className={`favourite-button ${isFavourite(episode) ? "added-to-favs" : ""}`}
-                                            onClick={() => toggleFavorite(episode)}
-                                            >
-                                                {isFavorite(episode) ? 
-                                                <FontAwesomeIcon icon={faHeart} /> : 
-                                                <FontAwesomeIcon icon={faHeart} className='heart' />}
-                                            </button>
+                                            {/* <button
+                                            
+                                            </button> */}
                                         </div>
                                     ))}
                                 </div>
@@ -102,5 +97,5 @@ export default function ShowDetails() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
