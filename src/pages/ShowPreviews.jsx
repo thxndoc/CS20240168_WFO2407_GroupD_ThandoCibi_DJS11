@@ -30,39 +30,6 @@ export default function ShowPreviews() {
         loadPreviews();
     },[])
 
-    const handleToggleFavourite = (episode, show, season) => {
-        setFavourites((prevFavourites) => {
-            const isAlreadyFavourite = prevFavourites.some(
-              (fav) =>
-                fav.episode.episode === episode.episode &&
-                fav.show === show &&
-                fav.season === season
-            );
-      
-            if (isAlreadyFavourite) {
-              // remove from favourites
-              return prevFavourites.filter(
-                (fav) =>
-                  !(fav.episode.episode === episode.episode &&
-                    fav.show === show &&
-                    fav.season === season)
-              )
-            } else {
-              // add to favourites
-              return [...prevFavourites, { episode, show, season, dateAndTimeAdded: new Date().toISOString() }];
-            }
-          });
-    }
-
-    const isFavourite = (episode, show, season) => {
-        return favourites.some(
-          (fav) =>
-            fav.episode.episode === episode.episode &&
-            fav.show === show &&
-            fav.season === season
-        )
-      }
-
     if (loading) {
         return (
         <div className="loader-container">
