@@ -95,14 +95,19 @@ export default function ShowDetails() {
 
     return (
         <div className="show-details">
-            <Link
-            to="/"
-            relative="path"
-            className="back-button"
-            >Back to all shows
-            </Link>
-            <h1>{showDetails.title}</h1>
-            <div className="show-info">
+            <div className="back-button-container">
+                <Link
+                to="/"
+                relative="path"
+                className="back-button"
+                >Back to all shows
+                </Link>
+            </div>
+            
+                <h1>{showDetails.title}</h1>
+
+                <div className="show-info">
+
                 <div className="show-info-img-container">
                     <img src={showDetails.image} alt={showDetails.title} />
                 </div>
